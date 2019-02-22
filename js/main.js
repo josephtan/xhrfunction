@@ -1,6 +1,6 @@
 var proxyURL = "https://reqres.in/api/users";
 
-function requestXhr(url, method, status, timeout, callback) {
+function requestXhr(url, method, contentType, status, timeout, callback) {
     /**
      * Reusable xhr function with callback
      */
@@ -22,11 +22,11 @@ function requestXhr(url, method, status, timeout, callback) {
     };
     xhr.open(method, url, true);
     xhr.withCredentials = true;
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", contentType);
     xhr.send();
 }
 
-requestXhr(proxyURL, "GET", 200,5000,handleJSONURL);
+requestXhr(proxyURL, "GET", "application/x-www-form-urlencoded",200,5000,handleJSONURL);
 
 function handleJSONURL(error, jsondata) {
     if (error) throw error;
