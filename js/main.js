@@ -28,6 +28,7 @@ function requestXhr(url, method, contentType, status, timeout, callback) {
 
 requestXhr(proxyURL, "GET", "application/json",200,5000,handleJSONURL);
 
+
 function handleJSONURL(error, jsondata) {
     if (error) throw error;
     var jsonList = JSON.parse(jsondata);
