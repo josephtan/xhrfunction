@@ -22,7 +22,7 @@ function requestXhr(url, method, status, timeout, callback) {
     };
     xhr.open(method, url, true);
     xhr.withCredentials = true;
-    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send({ 'request': "authentication token" });
 }
 
