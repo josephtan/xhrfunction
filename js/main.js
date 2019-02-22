@@ -21,7 +21,6 @@ function requestXhr(url, method, contentType, status, timeout, callback) {
         console.log('Timeout');
     };
     xhr.open(method, url, true);
-    xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", contentType);
     xhr.send();
 }
