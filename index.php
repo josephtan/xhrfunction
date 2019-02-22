@@ -1,7 +1,7 @@
 <?php
 $origin = $_SERVER['HTTP_ORIGIN'];
 $allowed_domains = [
-    'https://my-json-server.typicode.com/',
+    'https://reqres.in/api/users',
     'http://13.211.249.108/'
 ];
 
