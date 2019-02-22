@@ -1,4 +1,4 @@
-var proxyURL = "https://reqres.in/api/users";
+var proxyURL = "https://cors-escape.herokuapp.com/https://reqres.in/api/users";
 
 function requestXhr(url, method, contentType, status, timeout, callback) {
     /**

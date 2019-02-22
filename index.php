@@ -29,8 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
     exit(0);
 }
-
-echo "You have CORS!";?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
