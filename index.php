@@ -1,15 +1,8 @@
 <?php
-$allowed_domains = [
-    'https://reqres.in/api/users'
-];
-
-
 if(isset($_SERVER["HTTP_ORIGIN"]))
 {
     // You can decide if the origin in $_SERVER['HTTP_ORIGIN'] is something you want to allow, or as we do here, just allow all
-    if (in_array($origin, $allowed_domains)) {
-        header('Access-Control-Allow-Origin: ' . $origin);
-    }
+    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
 }
 else
 {
