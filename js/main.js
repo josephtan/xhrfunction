@@ -1,4 +1,4 @@
-var proxyURL = "https://cors-escape.herokuapp.com/https://reqres.in/api/users";
+var proxyURL = "http://13.211.249.108/xhrfunction/?url=https://reqres.in/api/users";
 
 function requestXhr(url, method, contentType, status, timeout, callback) {
     /**
@@ -23,14 +23,21 @@ function requestXhr(url, method, contentType, status, timeout, callback) {
     xhr.open(method, url, true);
     xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", contentType);
-    xhr.send();
+    var data = {
+        headers: {
+            Accept: "application/json",
+            Origin: "http://maximum.blog"
+        },
+        method: 'GET'
+    };
+    xhr.send(JSON.stringify(data));
 }
 
-requestXhr(proxyURL, "GET", "application/json",200,5000,handleJSONURL);
+requestXhr(proxyURL, "POST", "application/json",200,5000,handleJSONURL);
 
 function handleJSONURL(error, jsondata) {
     if (error) throw error;
-    var jsonList = JSON.parse(JSON.stringify(jsondata));
+    var jsonList = JSON.parse(jsondata);
     for (var i = 0; i < jsonList.length; i++) {
         jsondata = jsonList[i];
         console.log(jsondata);
