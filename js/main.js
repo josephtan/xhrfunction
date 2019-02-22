@@ -21,9 +21,9 @@ function requestXhr(url, method, status, timeout, callback) {
         console.log('Timeout');
     };
     xhr.open(method, url, true);
-    http_request.withCredentials = true;
-    http_request.setRequestHeader("Content-Type", "application/json");
-    http_request.send({ 'request': "authentication token" });
+    xhr.withCredentials = true;
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send({ 'request': "authentication token" });
 }
 
 requestXhr(proxyURL, "GET", 200,5000,handleJSONURL);
