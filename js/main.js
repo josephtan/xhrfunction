@@ -1,4 +1,4 @@
-var proxyURL = "https://my-json-server.typicode.com/typicode/demo";
+var proxyURL = "https://my-json-server.typicode.com/typicode/demo/post";
 
 function requestXhr(url, method, status, timeout, callback) {
     /**
