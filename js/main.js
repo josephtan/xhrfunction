@@ -1,4 +1,4 @@
-var proxyURL = "https://crossorigin.me/https://google.com/https://reqres.in/api/users";
+var proxyURL = "https://reqres.in/api/users";
 
 function requestXhr(url, method, contentType, status, timeout, callback) {
     /**
