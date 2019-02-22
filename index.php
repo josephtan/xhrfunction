@@ -1,7 +1,8 @@
 <?php
 $origin = $_SERVER['HTTP_ORIGIN'];
 $allowed_domains = [
-    'https://my-json-server.typicode.com/'
+    'https://my-json-server.typicode.com/',
+    'http://13.211.249.108/xhrfunction/'
 ];
 
 if (in_array($origin, $allowed_domains)) {
