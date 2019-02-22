@@ -1,30 +1,24 @@
 <?php
-if(isset($_SERVER["HTTP_ORIGIN"]))
-{
-    // You can decide if the origin in $_SERVER['HTTP_ORIGIN'] is something you want to allow, or as we do here, just allow all
+// Allow from any origin
+if (isset($_SERVER['HTTP_ORIGIN'])) {
     header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
-}
-else
-{
-    //No HTTP_ORIGIN set, so we allow any. You can disallow if needed here
-    header("Access-Control-Allow-Origin: *");
+    header('Access-Control-Allow-Credentials: true');
+    header('Access-Control-Max-Age: 86400');    // cache for 1 day
 }
 
-header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Max-Age: 600");    // cache for 10 minutes
+// Access-Control headers are received during OPTIONS requests
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
-if($_SERVER["REQUEST_METHOD"] == "OPTIONS")
-{
-    if (isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_METHOD"]))
-        header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT"); //Make sure you remove those you do not want to support
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
-    if (isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]))
-        header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+    if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
+        header("Access-Control-Allow-Headers:        {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
 
-    //Just exit with 200 OK with the above headers for OPTIONS method
     exit(0);
 }
-?>
+
+echo "You have CORS!";?>
 <!DOCTYPE html>
 <html lang="en">
 
