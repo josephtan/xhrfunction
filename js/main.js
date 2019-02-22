@@ -23,7 +23,7 @@ function requestXhr(url, method, status, timeout, callback) {
     xhr.open(method, url, true);
     xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send({ 'request': "authentication token" });
+    xhr.send();
 }
 
 requestXhr(proxyURL, "GET", 200,5000,handleJSONURL);
