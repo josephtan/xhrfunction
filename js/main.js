@@ -10,8 +10,7 @@ function requestXhr(url, method, contentType, status, timeout, callback) {
     xhr.onreadystatechange = function(e) {
         if (xhr.readyState === 4) {
             if (xhr.status === status) {
-               // callback(null, JSON.parse(xhr.response));
-                console.log(xhr.response);
+                callback(null, JSON.parse(xhr.response));
             } else {
                 callback(xhr.status, null);
             }
@@ -27,7 +26,7 @@ function requestXhr(url, method, contentType, status, timeout, callback) {
     var data = {
         headers: {
             Accept: "application/json",
-            Origin: "http://maximum.blog"
+            Origin: "https://reqres.in/api/users"
         },
         method: 'GET'
     };
