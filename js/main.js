@@ -31,10 +31,7 @@ requestXhr(proxyURL, "GET", "application/json",200,5000,handleJSONURL);
 function handleJSONURL(error, jsondata) {
     if (error) throw error;
     var jsonList = [];
-    jsonList = jsondata;
     for (var i = 0; i < jsondata.length; i++) {
-        //console.log(jsonList[i]);
+        jsonArray.push(jsondata)
     }
-
-    console.log(jsondata.id);
 }
