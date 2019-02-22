@@ -10,7 +10,7 @@ function requestXhr(url, method, contentType, status, timeout, callback) {
     xhr.onreadystatechange = function(e) {
         if (xhr.readyState === 4) {
             if (xhr.status === status) {
-                callback(null, JSON.parse(xhr.response));
+               // callback(null, JSON.parse(xhr.response));
                 console.log(xhr.response);
             } else {
                 callback(xhr.status, null);
