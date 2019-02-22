@@ -32,7 +32,9 @@ function handleJSONURL(error, jsondata) {
     if (error) throw error;
     var jsonList = [];
     jsonList = jsondata;
-    for (var i = 0; i < jsonList.length; i++) {
-        console.log(jsonList[i]);
+    for (var i = 0; i < jsondata.length; i++) {
+        //console.log(jsonList[i]);
     }
+
+    console.log(jsondata.id);
 }
