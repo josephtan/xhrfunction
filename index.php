@@ -1,7 +1,7 @@
 <?php
 $origin = $_SERVER['HTTP_ORIGIN'];
 $allowed_domains = [
-    'https://reqres.in/api/users'
+    '*'
 ];
 
 if (in_array($origin, $allowed_domains)) {
