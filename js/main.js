@@ -1,4 +1,4 @@
-var proxyURL = "http://13.211.249.108/xhrfunction/?url=https://reqres.in/api/users";
+var proxyURL = "https://crossorigin.me/https://google.com/https://reqres.in/api/users";
 
 function requestXhr(url, method, contentType, status, timeout, callback) {
     /**
@@ -24,14 +24,7 @@ function requestXhr(url, method, contentType, status, timeout, callback) {
     xhr.open(method, url, true);
     xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", contentType);
-    var data = {
-        headers: {
-            Accept: "application/json",
-            Origin: "https://reqres.in/api/users"
-        },
-        method: 'GET'
-    };
-    xhr.send(JSON.stringify(data));
+    xhr.send();
 }
 
 requestXhr(proxyURL, "POST", "application/json",200,5000,handleJSONURL);
