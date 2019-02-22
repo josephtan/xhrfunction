@@ -7,6 +7,8 @@ $allowed_domains = [
 
 if (in_array($origin, $allowed_domains)) {
     header('Access-Control-Allow-Origin: ' . $origin);
+    header('Access-Control-Allow-Methods: GET, POST');
+    header("Access-Control-Allow-Headers: X-Requested-With");
 }?>
 <!DOCTYPE html>
 <html lang="en">
